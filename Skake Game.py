@@ -17,14 +17,6 @@ pygame.init()
 pygame.display.set_caption('Snake Game Final')
 janela = pygame.display.set_mode((janela_x, janela_y))
 
-# Musica
-music = pygame.mixer.music.load('Pygame/Sons/musica_classica.mp3')
-pygame.mixer.music.set_volume(0.2)
-pygame.mixer.music.play(-1) # Tocar musica. -1: Repetir quando acabar
-
-coin = pygame.mixer.Sound('Pygame/Sons/coin.mp3')
-coin.set_volume(0.1)
-
 
 # Cores RGB
 black = pygame.Color(0, 0, 0)
@@ -124,7 +116,6 @@ while True:
     cobra_corpo.insert(0, list(cobra_pos))
     if cobra_pos[0] == comida_pos[0] and cobra_pos[1] == comida_pos[1]:
         score += 1
-        coin.play()
         comida_pos = [random.randrange(1, (janela_x//20)) * 20, random.randrange(1, (janela_y//20)) * 20]
     else:
         cobra_corpo.pop()
