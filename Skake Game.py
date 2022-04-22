@@ -68,9 +68,6 @@ def reiniciar():
     trocar = direção
     morreu = False
 
-# Score
-msg = f'Score: {score}'
-text_format = font1.render(msg, True, (255, 255, 255))
 
 morreu = False
 # Início
@@ -110,7 +107,9 @@ while True:
         cobra_pos[0] -= 20
     if direção == 'RIGHT':
         cobra_pos[0] += 20
-    
+    # Score
+    msg = f'Score: {score}'
+    text_format = font1.render(msg, True, (255, 255, 255))
 
     # Comer maçã
     cobra_corpo.insert(0, list(cobra_pos))
